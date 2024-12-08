@@ -55,11 +55,6 @@ To ensure your application works properly, give the App Engine default service a
 2. The URL displayed is your live backend API.
 3. You can now use the `/predict` endpoint in your application by making API calls to the provided URL.
 
-## Notes
-- Make sure all necessary dependencies are included in your project.
-- If you encounter issues during deployment, check the App Engine logs in the GCP Console for debugging.
-- Secure your endpoints by implementing authentication if needed.
-
 ## Useful Links
 - [GCP Console](https://console.cloud.google.com/)
 - [App Engine Documentation](https://cloud.google.com/appengine/docs)
