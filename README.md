@@ -35,6 +35,10 @@ To ensure your application works properly, give the App Engine default service a
    ```bash
    cd <project-directory>
    ```
+4. Install the required Python dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Step 4: Deploying Your Backend API
 1. Deploy the application to App Engine using the `gcloud` CLI:
