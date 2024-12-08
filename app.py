@@ -28,7 +28,7 @@ def predict():
         with tempfile.NamedTemporaryFile(delete=False) as temp_file:
             file.save(temp_file.name)
             result = predict_cataract(model, temp_file.name)
-            os.unlink(temp_file.name)  # Delete the temporary file
+            os.unlink(temp_file.name)  #Delete the temporary file
             return jsonify({'result': float(result)})
 
 if __name__ == '__main__':
