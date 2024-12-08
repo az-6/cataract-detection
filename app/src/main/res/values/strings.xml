@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">capstone</string>
+    <string name="title">Early Cataract Detection</string>
+    <string name="title_1">"Welcome to Early Cataract Detection"</string>
+    <string name="desc_1">"Detect early cataracts to get timely treatment. Start your eye test now!</string>
+    <string name="title_2">"Accurate Cataract Detection"</string>
+    <string name="desc_2">"Perform eye exams with advanced tech to spot cataract symptoms accurately."</string>
+    <string name="title_3">"Instant Results and Explanations"</string>
+    <string name="desc_3">"Get instant results and detailed explanations of your eye health."</string>
+    <string name="title_4">"Find Nearby Hospitals"</string>
+    <string name="desc_4">"Need further care? Find nearby hospitals and clinics easily."</string>
+    <string name="start_now">START</string>
+    <string name="title_welcome_page">Welcome to Early Cataract Detection App</string>
+    <string name="message_welcome_page">Early Cataract Detection, Protect Your Vision</string>
+    <string name="login">LOGIN</string>
+    <string name="signup">SIGN UP</string>
+    <string name="image_login">image_login</string>
+    <string name="title_login_page">Early Cataract Detection App</string>
+    <string name="email">Email</string>
+    <string name="password">password</string>
+    <string name="masukkan_password_anda">Enter your password</string>
+    <string name="don_t_have_an_account">don\'t have an account?</string>
+    <string name="masukkan_email_anda">Enter your email</string>
+    <string name="error_password_8">Input password min 8 character</string>
+    <string name="error_email">Input the right email!</string>
+    <string name="txt_ready">Ready to Share Your Story?</string>
+    <string name="login_untuk_melanjutkan">Login to Continue!</string>
+    <string name="txt_email" translatable="false">Email</string>
+    <string name="email_hint">Input Your Email</string>
+    <string name="txt_password" translatable="false">Password</string>
+    <string name="password_hint">Input Your Password</string>
+    <string name="login_now">Login Now</string>
+    <string name="txt_daftar" translatable="false">Don\'t Have Account?</string>
+    <string name="register_now">Register Now</string>
+    <string name="txt_lengkapi_data_diri">Lengkapi data dirimu untuk mendaftar</string>
+    <string name="txt_name" translatable="false">Nama</string>
+    <string name="error_min_4_char">Input min 4 character!</string>
+    <string name="txt_daftar_now">Register Now</string>
+    <string name="txt_login_ya" translatable="false">Have Account?</string>
+    <string name="input_your_name">Input Your Name</string>
+    <string name="home">Home</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile">Profile</string>
+    <string name="result">result</string>
+    <string name="Hospital">hospital</string>
+    <string name="image_description">image_description</string>
+    <string name="camera">camera</string>
+
+
+</resources>
