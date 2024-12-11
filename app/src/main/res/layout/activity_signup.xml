@@ -7,7 +7,7 @@
     android:fillViewport="false"
     android:paddingBottom="0dp"
     android:layout_gravity="bottom"
-    tools:context=".SignupActivity">
+    tools:context=".ui.auth.signup.SignupActivity">
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@+id/main"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_title_register" />
 
 
-    <com.dicoding.capstone.MyEditTextName
+    <com.dicoding.capstone.ui.utils.MyEditTextName
         android:id="@+id/edt_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
         app:layout_constraintStart_toStartOf="@+id/img_register"
         app:layout_constraintTop_toBottomOf="@+id/edt_name" />
 
-    <com.dicoding.capstone.MyEditTextEmail
+    <com.dicoding.capstone.ui.utils.MyEditTextEmail
         android:id="@+id/edt_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
         app:layout_constraintStart_toStartOf="@+id/img_register"
         app:layout_constraintTop_toBottomOf="@+id/edt_email" />
 
-    <com.dicoding.capstone.MyEditTextPassword
+    <com.dicoding.capstone.ui.utils.MyEditTextPassword
         android:id="@+id/edt_pass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

@@ -73,5 +73,14 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+    <style name="CustomFragmentTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="colorPrimaryVariant">@color/md_theme_onPrimaryContainer</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Add more customizations as needed -->
+    </style>
 
+    <style name="Floating" parent="Widget.Design.FloatingActionButton">
+        <item name="android:foreground">@drawable/floating_background</item>
+    </style>
 </resources>

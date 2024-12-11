@@ -1,4 +1,4 @@
-package com.dicoding.capstone
+package com.dicoding.capstone.ui.profile
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,11 +8,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import com.dicoding.capstone.R
+import com.dicoding.capstone.ui.onboarding.OnBoardingActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class ProfileFragment : Fragment() {
+class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     // Inisialisasi Firestore dan FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
@@ -23,6 +26,7 @@ class ProfileFragment : Fragment() {
     private lateinit var tvEmail: TextView
     private lateinit var tvUid: TextView
     private lateinit var btnLogout: Button // Tombol Logout
+    private lateinit var btnDelete: Button // Tombol Delete Account
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +44,7 @@ class ProfileFragment : Fragment() {
         tvEmail = rootView.findViewById(R.id.tvEmail)
         tvUid = rootView.findViewById(R.id.tvUid)
         btnLogout = rootView.findViewById(R.id.btnLogout) // Bind tombol logout
+        btnDelete = rootView.findViewById(R.id.btnDelete) // Bind tombol delete
 
         // Ambil UID dari Firebase Authentication
         val user = mAuth.currentUser
@@ -53,6 +58,11 @@ class ProfileFragment : Fragment() {
         // Set listener untuk tombol logout
         btnLogout.setOnClickListener {
             logoutUser()
+        }
+
+        // Set listener untuk tombol delete account
+        btnDelete.setOnClickListener {
+            showDeleteConfirmationDialog()
         }
 
         return rootView
@@ -80,27 +90,19 @@ class ProfileFragment : Fragment() {
             }
     }
 
-    // Fungsi untuk logout dan menghapus akun pengguna
+    // Fungsi untuk logout tanpa menghapus akun
     private fun logoutUser() {
         val user = mAuth.currentUser
 
         if (user != null) {
-            // Logout terlebih dahulu
+            // Logout pengguna
             mAuth.signOut()
 
-            // Hapus akun pengguna dari Firebase
-            user.delete()
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(requireContext(), "Account deleted successfully", Toast.LENGTH_SHORT).show()
+            // Tampilkan pesan sukses
+            Toast.makeText(requireContext(), "Successfully logged out", Toast.LENGTH_SHORT).show()
 
-                        // Setelah logout dan penghapusan akun, arahkan ke halaman OnBoarding
-                        navigateToOnBoarding()
-                    } else {
-                        Toast.makeText(requireContext(), "Failed to delete account: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
-                    }
-                }
-
+            // Setelah logout, arahkan pengguna ke halaman OnBoarding
+            navigateToOnBoarding()
         } else {
             Toast.makeText(requireContext(), "No user is logged in", Toast.LENGTH_SHORT).show()
         }
@@ -111,5 +113,44 @@ class ProfileFragment : Fragment() {
         val intent = Intent(requireContext(), OnBoardingActivity::class.java)
         startActivity(intent)
         requireActivity().finish() // Finish current activity to remove it from the back stack
+    }
+
+    // Fungsi untuk menghapus akun
+    private fun deleteUserAccount() {
+        val user = mAuth.currentUser
+        if (user != null) {
+            // Hapus data pengguna dari Firestore
+            firestore.collection("users").document(user.uid)
+                .delete()
+                .addOnSuccessListener {
+                    // Setelah data pengguna dihapus, hapus akun Firebase Authentication
+                    user.delete()
+                        .addOnSuccessListener {
+                            Toast.makeText(requireContext(), "Account successfully deleted", Toast.LENGTH_SHORT).show()
+                            // Arahkan ke halaman OnBoarding setelah penghapusan akun
+                            navigateToOnBoarding()
+                        }
+                        .addOnFailureListener { e ->
+                            Toast.makeText(requireContext(), "Failed to delete account: ${e.message}", Toast.LENGTH_SHORT).show()
+                        }
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(requireContext(), "Failed to delete user data: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+        } else {
+            Toast.makeText(requireContext(), "No user logged in", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    // Fungsi untuk menampilkan konfirmasi sebelum menghapus akun
+    private fun showDeleteConfirmationDialog() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Delete Account")
+        builder.setMessage("Are you sure you want to delete your account? This action is irreversible.")
+        builder.setPositiveButton("Yes") { _, _ ->
+            deleteUserAccount()
+        }
+        builder.setNegativeButton("No", null)
+        builder.show()
     }
 }

@@ -48,6 +48,11 @@
     <string name="Hospital">hospital</string>
     <string name="image_description">image_description</string>
     <string name="camera">camera</string>
+    <string name="detect">detect</string>
+    <string name="history">history</string>
+    <string name="latest_articles">Article</string>
+    <string name="failed_to_connect">Failed to Connect</string>
+    <string name="retry">Retry</string>
 
 
 </resources>

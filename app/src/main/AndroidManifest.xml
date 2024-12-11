@@ -5,6 +5,7 @@
     <!-- Izin akses lokasi dan kamera -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -32,7 +33,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
+                android:resource="@xml/provider_paths" />
         </provider>
 
         <!-- API Key untuk Google Maps -->
@@ -42,12 +43,12 @@
 
         <!-- Aktivitas utama -->
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="false" />
 
         <!-- Aktivitas untuk OnBoarding -->
         <activity
-            android:name=".OnBoardingActivity"
+            android:name=".ui.onboarding.OnBoardingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -57,17 +58,17 @@
 
         <!-- Aktivitas Signup -->
         <activity
-            android:name=".SignupActivity"
+            android:name=".ui.auth.signup.SignupActivity"
             android:exported="false" />
 
         <!-- Aktivitas Login -->
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.auth.login.LoginActivity"
             android:exported="false" />
 
         <!-- Aktivitas Welcome -->
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".ui.dashboard.WelcomeActivity"
             android:exported="false" />
 
     </application>

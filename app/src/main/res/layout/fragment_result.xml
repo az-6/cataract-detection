@@ -5,26 +5,27 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".ResultFragment">
+    tools:context=".ui.result.ResultFragment">
 
-    <!-- ImageView positioned at the center with a smaller size -->
     <ImageView
-        android:id="@+id/imageViewResult"
-        android:layout_width="300dp"
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_gravity="center"
-        android:contentDescription="@string/image_description"
         android:scaleType="centerCrop" />
 
-    <!-- TextView directly below the ImageView with minimal margin -->
     <TextView
-        android:id="@+id/textViewResult"
+        android:id="@+id/conditionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mata Anda 100% normal"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_marginTop="8dp"
-        android:gravity="center" />
+        android:text="Condition"
+        android:textSize="18sp"
+        android:paddingTop="16dp" />
+
+    <TextView
+        android:id="@+id/predictionScoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prediction Score"
+        android:textSize="16sp" />
 
 </LinearLayout>

@@ -1,17 +1,17 @@
-package com.dicoding.capstone
+package com.dicoding.capstone.ui.utils
 
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
-import android.util.Patterns
 import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
+import com.dicoding.capstone.R
 
-class MyEditTextEmail : AppCompatEditText {
-    private lateinit var showEmailImg: Drawable
+class MyEditTextName : AppCompatEditText {
+    private lateinit var showPersonImg: Drawable
     private lateinit var trueBackground: Drawable
     private lateinit var falseBackground: Drawable
 
@@ -38,9 +38,9 @@ class MyEditTextEmail : AppCompatEditText {
     }
 
     private fun init() {
-        showEmailImg =
+        showPersonImg =
             ContextCompat.getDrawable(
-                context, R.drawable.baseline_email_24
+                context, R.drawable.baseline_person_24
             ) as Drawable
         trueBackground =
             ContextCompat.getDrawable(
@@ -57,24 +57,20 @@ class MyEditTextEmail : AppCompatEditText {
         //show icon/img btn
         setButtonDrawables()
 
-        addTextChangedListener(onTextChanged = { _, _, _, _ ->
-            if (isTextEmailAddress()) {
+        addTextChangedListener(onTextChanged = {s, _, _, _ ->
+            if (s.toString().length >= 4){
                 background = trueBackground
                 error = null
-            } else {
+            }else{
                 background = falseBackground
-                error = context.getString(R.string.error_email)
+                error = context.getString(R.string.error_min_4_char)
             }
         })
     }
 
-    private fun isTextEmailAddress(): Boolean {
-        return Patterns.EMAIL_ADDRESS.matcher(text.toString()).matches()
-    }
-
     //Konfigurasi icon/img in button
     private fun setButtonDrawables(
-        startOfTheText: Drawable = showEmailImg,
+        startOfTheText: Drawable = showPersonImg,
         topOfTheText: Drawable? = null,
         endOfTheText: Drawable? = null,
         bottomOfTheText: Drawable? = null

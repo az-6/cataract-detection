@@ -5,8 +5,6 @@ plugins {
     id("com.google.devtools.ksp")
     id ("kotlin-parcelize")
     alias(libs.plugins.google.android.libraries.mapsplatform.secrets.gradle.plugin)
-
-
 }
 
 android {
@@ -67,7 +65,7 @@ dependencies {
     implementation (libs.material)
 
     // Import the BoM for the Firebase platform
-    implementation (platform("com.google.firebase:firebase-bom:33.7.0"))
+    implementation (platform(libs.firebase.bom))
 
     // Declare the dependencies for the desired Firebase products without specifying versions
     // For example, declare the dependencies for Firebase Authentication and Cloud Firestore
@@ -77,4 +75,13 @@ dependencies {
     implementation (libs.androidx.cardview)
     implementation (libs.play.services.location)
 
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+    implementation (libs.gson)
+    implementation (libs.okhttp)
+    implementation (libs.logging.interceptor)
+
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.0")
+    implementation ("androidx.activity:activity-ktx:1.6.1")
 }

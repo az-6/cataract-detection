@@ -1,9 +1,12 @@
-package com.dicoding.capstone
+package com.dicoding.capstone.ui.onboarding
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.dicoding.capstone.ui.main.MainActivity
+import com.dicoding.capstone.R
+import com.dicoding.capstone.ui.dashboard.WelcomeActivity
 import com.dicoding.capstone.databinding.ActivityOnBoardingBinding
 import com.google.firebase.auth.FirebaseAuth
 

@@ -1,4 +1,4 @@
-package com.dicoding.capstone
+package com.dicoding.capstone.ui.utils
 
 import android.content.Context
 import android.graphics.Canvas
@@ -10,6 +10,7 @@ import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
+import com.dicoding.capstone.R
 
 class MyEditTextPassword : AppCompatEditText, View.OnTouchListener {
     private lateinit var showVisibleOnImg: Drawable
