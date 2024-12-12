@@ -1,7 +1,7 @@
 import tensorflow as tf
 import numpy as np
 
-def predict_cataract(image_paths, model, threshold=0.5):
+def predict_catarac(image_paths, model, threshold=0.5):
     results = []
     for image_path in image_paths:
         img = tf.keras.utils.load_img(image_path, target_size=(120, 120))
@@ -28,4 +28,4 @@ def predict_cataract(image_paths, model, threshold=0.5):
         results.append(result_entry)
     return results
 
-model = tf.keras.models.load_model('cataract_model.h5')
+model = tf.keras.models.load_model('model/cataract_model.h5')
