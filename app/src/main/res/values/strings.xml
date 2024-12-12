@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">capstone</string>
+    <string name="app_name">Catascan</string>
     <string name="title">Early Cataract Detection</string>
     <string name="title_1">"Welcome to Early Cataract Detection"</string>
     <string name="desc_1">"Detect early cataracts to get timely treatment. Start your eye test now!</string>
@@ -53,6 +53,15 @@
     <string name="latest_articles">Article</string>
     <string name="failed_to_connect">Failed to Connect</string>
     <string name="retry">Retry</string>
+    <string name="image_selected">image selected</string>
+    <string name="unfortunately_you_are">unfortunately you are</string>
+    <string name="_100">100</string>
+    <string name="percent">%</string>
+    <string name="cataract">cataract</string>
+    <string name="for_further_action_you_can_check_with_the_hospital">for further action you can check with the hospital</string>
+    <string name="click_here">Click Here</string>
+    <string name="Save_File">Save</string>
+    <string name="click_here_to_Save">Click Here to Save</string>
 
 
 </resources>

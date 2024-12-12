@@ -19,7 +19,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:background="@color/md_theme_tertiaryFixed_highContrast">
+                android:background="@color/md_theme_dark_errorContainer">
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -57,7 +57,7 @@
                 android:fontFamily="serif"
                 android:text="Nama Pengguna"
                 android:textAlignment="center"
-                android:textColor="@color/md_theme_tertiaryFixed_highContrast"
+                android:textColor="@color/md_theme_dark_errorContainer"
                 android:textSize="26sp"
                 android:textStyle="bold" />
 

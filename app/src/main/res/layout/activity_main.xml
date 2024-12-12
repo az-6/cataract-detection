@@ -21,7 +21,9 @@
         app:fabCradleMargin="20dp"
         app:fabCradleVerticalOffset="10dp"
         app:fabCradleRoundedCornerRadius="20dp"
-        android:layout_gravity="bottom">
+        android:layout_gravity="bottom"
+        android:background="@color/md_theme_dark_errorContainer"
+        android:backgroundTint="@color/md_theme_dark_errorContainer">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
@@ -43,5 +45,14 @@
         app:layout_anchorGravity="top|center"
         app:srcCompat="@drawable/ic_camera"
         style="@style/Floating"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/fragment_container"
+        app:layout_anchorGravity="center" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -33,6 +33,12 @@ class SignupActivity : AppCompatActivity() {
             message?.let { Toast.makeText(this, it, Toast.LENGTH_SHORT).show() }
         })
 
+        signupViewModel.signupSuccess.observe(this, Observer { success ->
+            if (success == true) {
+                navigateToLoginActivity() // Pindah ke halaman login
+            }
+        })
+
         // Observe validation errors
         signupViewModel.nameError.observe(this, Observer { error ->
             binding.edtName.error = error
@@ -57,6 +63,15 @@ class SignupActivity : AppCompatActivity() {
 
         playAnimation()
     }
+
+    private fun navigateToLoginActivity() {
+        Toast.makeText(this, "Account created successfully! Please login.", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
+    }
+
 
     private fun handleSignup() {
         val name = binding.edtName.text.toString().trim()

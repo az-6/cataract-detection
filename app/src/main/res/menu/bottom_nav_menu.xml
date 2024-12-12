@@ -3,21 +3,26 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home"
-        android:title="@string/home" />
+        android:title="@string/home"
+        android:iconTint="#FFFFFF" />
     <item
         android:id="@+id/navigation_history"
         android:icon="@drawable/ic_history"
-        android:title="@string/history" />
+        android:title="@string/history"
+        android:iconTint="#FFFFFF" />
     <item
         android:id="@+id/navigation_dashboard"
         android:title=""
-        android:enabled="false"/>
+        android:enabled="false"
+        android:iconTint="#FFFFFF" />
     <item
         android:id="@+id/navigation_hospital"
         android:icon="@drawable/ic_map"
-        android:title="@string/Hospital" />
+        android:title="@string/Hospital"
+        android:iconTint="#FFFFFF" />
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/baseline_person_24"
-        android:title="@string/profile" />
+        android:title="@string/profile"
+        android:iconTint="#FFFFFF" />
 </menu>

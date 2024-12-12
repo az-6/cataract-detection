@@ -7,15 +7,15 @@
         <item name="android:textViewStyle">@style/AppTextStyle</item>
         <item name="materialButtonStyle">@style/AppMaterialButtonStyle</item>
 
-        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="colorPrimary">@color/md_theme_dark_errorContainer</item>
         <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
-        <item name="colorPrimaryContainer">@color/md_theme_primaryContainer</item>
+        <item name="colorPrimaryContainer">@color/md_theme_background</item>
         <item name="colorOnPrimaryContainer">@color/md_theme_onPrimaryContainer</item>
-        <item name="colorSecondary">@color/md_theme_secondary</item>
+        <item name="colorSecondary">@color/md_theme_dark_errorContainer</item>
         <item name="colorOnSecondary">@color/md_theme_onSecondary</item>
         <item name="colorSecondaryContainer">@color/md_theme_secondaryContainer</item>
-        <item name="colorOnSecondaryContainer">@color/md_theme_onSecondaryContainer</item>
-        <item name="colorTertiary">@color/md_theme_tertiary</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_dark_errorContainer</item>
+        <item name="colorTertiary">@color/md_theme_background</item>
         <item name="colorOnTertiary">@color/md_theme_onTertiary</item>
         <item name="colorTertiaryContainer">@color/md_theme_tertiaryContainer</item>
         <item name="colorOnTertiaryContainer">@color/md_theme_onTertiaryContainer</item>
@@ -74,7 +74,7 @@
     </style>
 
     <style name="CustomFragmentTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/md_theme_onPrimaryContainer</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Add more customizations as needed -->
@@ -82,5 +82,9 @@
 
     <style name="Floating" parent="Widget.Design.FloatingActionButton">
         <item name="android:foreground">@drawable/floating_background</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.rounded" parent="">
+        <item name="cornerSize">50%</item>
     </style>
 </resources>

@@ -191,7 +191,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
         app:srcCompat="@drawable/outline_circle_24"
-        app:tint="@color/md_theme_primaryContainer_mediumContrast" />
+        app:tint="@color/md_theme_dark_errorContainer" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/menu2"
@@ -205,7 +205,7 @@
         app:layout_constraintTop_toTopOf="@+id/menu1"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/outline_circle_24"
-        app:tint="@color/md_theme_primaryContainer_mediumContrast" />
+        app:tint="@color/md_theme_dark_errorContainer" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/menu3"
@@ -219,7 +219,7 @@
         app:layout_constraintTop_toTopOf="@+id/menu2"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/outline_circle_24"
-        app:tint="@color/md_theme_primaryContainer_mediumContrast" />
+        app:tint="@color/md_theme_dark_errorContainer" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/menu4"
@@ -233,7 +233,7 @@
         app:layout_constraintTop_toTopOf="@+id/menu3"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/outline_circle_24"
-        app:tint="@color/md_theme_primaryContainer_mediumContrast" />
+        app:tint="@color/md_theme_dark_errorContainer" />
 
     <Button
         android:id="@+id/btn_start"
@@ -248,6 +248,7 @@
         app:layout_constraintBottom_toTopOf="@+id/menu2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
