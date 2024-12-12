@@ -1,12 +1,14 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
 import tensorflow as tf
 from flask_cors import CORS
 from predict import predict_cataract
+from bucket import upload_to_gcs
 import os
 import tempfile
 
 app = Flask(__name__)
 CORS(app)
+
 MODEL_PATH = os.path.join(os.path.dirname(__file__), 'cataract_model.h5')
 model = tf.keras.models.load_model(MODEL_PATH)
 
@@ -16,21 +18,28 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    if 'file' not in request.files:
+    if 'files' not in request.files:
         return jsonify({'error': 'No file part'})
     
-    file = request.files['file']
-    if file.filename == '':
-        return jsonify({'error': 'No selected file'})
+    uploaded_files = request.files.getlist('files')
+    if len(uploaded_files) == 0:
+        return jsonify({'error': 'No selected files'})
     
-    if file:
-        # Create temporary file
-        with tempfile.NamedTemporaryFile(delete=False) as temp_file:
-            file.save(temp_file.name)
-            result = predict_cataract(model, temp_file.name)
-            os.unlink(temp_file.name)  #Delete the temporary file
-            return jsonify({'result': float(result)})
+    with tempfile.TemporaryDirectory() as temp_dir:
+        image_paths = []
+        for file in uploaded_files:
+            file_path = os.path.join(temp_dir, file.filename)
+            file.save(file_path)
+            image_paths.append(file_path)
+
+        results = predict_cataract(image_paths, model)
+
+        for file_path, result in zip(image_paths, results):
+            folder = result["condition"]
+            upload_to_gcs(file_path, os.path.basename(file_path), folder, timeout=120)
+
+        return jsonify({'results': results})
 
 if __name__ == '__main__':
     os.makedirs('tmp', exist_ok=True)
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)
