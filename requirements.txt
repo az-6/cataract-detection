@@ -4,3 +4,5 @@ opencv-python-headless
 numpy
 gunicorn
 flask-cors
+pillow
+google-cloud-storage
