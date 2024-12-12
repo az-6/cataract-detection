@@ -1,7 +1,7 @@
 import tensorflow as tf
 import numpy as np
 
-def predict_eye_condition(image_paths, model, threshold=0.5):
+def predict_cataract(image_paths, model, threshold=0.5):
     results = []
     for image_path in image_paths:
         img = tf.keras.utils.load_img(image_path, target_size=(120, 120))
