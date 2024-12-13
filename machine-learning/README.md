@@ -1,4 +1,4 @@
-#Using CNN Model Guide: Connecting to Our Datasets and Retraining The Model if Needed.
+# Using CNN Model Guide: Connecting to Our Datasets and Retraining The Model if Needed.
 
 1. Connecting to Our Datasets.
     First, make a shortcut from our google drive dataset ([Dataset_Capstone_Drive](https://www.google.com/url?q=https%3A%2F%2Fdrive.google.com%2Fdrive%2Ffolders%2F1pvYAlszXocWbbZiW7kigFqJQwHEmxcrz%3Fhl%3DID)) to use our data for training and testing.
