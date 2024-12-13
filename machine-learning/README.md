@@ -11,7 +11,7 @@
     * Click "Add"
 
 2. Version
-    You need to change the version of Keras and Tensorflow to 2.15.0 in order for the ```python model.save("model.h5", save_format="h5")``` code to be executed, so it can save the model in h5 format. And you should also install tabulate as shown on the code below:
+    You need to change the version of Keras and Tensorflow to 2.15.0 in order for the ```model.save("model.h5", save_format="h5")``` code to be executed, so it can save the model in h5 format. And you should also install tabulate as shown on the code below:
 
     ```python
     !pip uninstall tensorflow
@@ -29,10 +29,10 @@
     You could just start the codes cells on the ipynb file, and it will visualize the data.
 
 4. Augmentation.
-    You could change the augmentation procedure on the ```python def create_augmentation_model()``` Function.
+    You could change the augmentation procedure on the ```def create_augmentation_model()``` Function.
 
 5. Model
-    You could change the augmentation procedure on the ```python def create_model()``` Function.
+    You could change the augmentation procedure on the ```def create_model()``` Function.
 
 6. Retraining The Model.
     You could change the numbers of epochs on 
@@ -44,5 +44,5 @@
     )
     ```
 7. Saving The Model
-    After training the Model, you could save the data in h5 format with ```python model.save("model.h5", save_format="h5")``` code.
+    After training the Model, you could save the data in h5 format with ```model.save("model.h5", save_format="h5")``` code.
 
