@@ -39,7 +39,6 @@ To enrich this mobile development project, CataScan integrates several key libra
 Firebase is used to securely handle user authentication, allowing users to log in or sign up using various methods (e.g., email, Google accounts). This ensures a personalized experience for each user, while also providing a secure authentication process.
 
 - **Email Sign-up/Log-in**
-- **Google Account Sign-in**
 - **Secure user authentication**
 
 ### Room Database for Local Storage
