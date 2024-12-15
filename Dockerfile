@@ -3,7 +3,7 @@ FROM python:3.9-slim
 # Set working directory
 WORKDIR /app
 
-# Salin semua file ke container
+# Copy all files to the container
 COPY . /app
 
 # Install dependencies
